@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/security-service-legacy/security-service-legacy.iml" filepath="$PROJECT_DIR$/security-service-legacy/security-service-legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-microservice.iml" filepath="$PROJECT_DIR$/spring-security-microservice.iml" />
+    </modules>
+  </component>
+</project>
