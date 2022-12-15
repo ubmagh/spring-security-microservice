@@ -22,7 +22,8 @@ public class RestApiTest {
                 "authorities",authentication.getAuthorities()
         );
     }
-    @PostMapping("/saveData")
+
+    @PostMapping("/testSaveData")
     @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     public Map<String,String> saveData(String data){
         return Map.of("saved_data",data);

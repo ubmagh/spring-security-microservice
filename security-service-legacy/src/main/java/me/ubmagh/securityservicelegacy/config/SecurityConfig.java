@@ -43,12 +43,11 @@ public class SecurityConfig {
     }
 
     /*
-
-
-    //@Bean
+    @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
+    */
 
     @Bean
     public AuthenticationManager authenticationManager(UserDetailsService userDetailsService){
@@ -57,7 +56,6 @@ public class SecurityConfig {
         authProvider.setUserDetailsService(userDetailsService);
         return new ProviderManager(authProvider);
     }
-    */
 
     @Bean
     public UserDetailsService inMemoryUserDetailsManager(){
@@ -86,7 +84,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(csrf->csrf.disable())
-                //.authorizeRequests(auth->auth.antMatchers("/token/**").permitAll())
+                .authorizeRequests(auth->auth.requestMatchers("/login-v1/**", "/login-v2/**", "/login-v3/**").permitAll())
                 .authorizeRequests(auth->auth.anyRequest().authenticated())
                 .sessionManagement(sess->sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
