@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "6192f6d4-879f-495c-8e80-c5cb368489e5",
+		"name": "security-ms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9982968"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/login-v3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "grantType",
+							"value": "password",
+							"description": "refreshToken OR password",
+							"type": "text"
+						},
+						{
+							"key": "withRefreshToken",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "refreshToken",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2NzEwNzIzMDcsImlhdCI6MTY3MTA3MjAwN30.Z0SFn3JtJDZ0zz3fIz3qFCcI7BcSq_YY48GpKkgEqQQiCAOT7X8jV_lAMPZ-4RVUArliH_ZMfPUApxRx6P6GmMTzIC6lQDWfm2W9stUL-f2If6Ht6FzYKgxRegn-f3-rEJhenwUG9JFxNmxtbLc-DSmCjj9V1N8YxV9iqBd0uhhonsi-BRUbghi0ReIDBW_wjybP70HdeIP-bWDz2I4ryW6vpWDec9ZMnYiy-oT_y5g7zcGftdTkYUX7bikMWahShpxjdT7hRjdNfnib-MsD5M1FHaRlRR-4G_gY2R5_pMJgW4wzL-MDFDXeKSFSMASve22TBDSG2U3UyJc_q1INGg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/login-v3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login-v3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2NzEzMjczNjMsImlhdCI6MTY3MTMyNzMwMywic2NvcGUiOiJBRE1JTiBVU0VSIn0.o6YJLiE3nDXRDKfQGnD4ovKcnId88haVpfZNBCcXuRYAektlBQ5vuu-kZoES_f_YA3kUTCTnC90pdaWkdTdPGtnA-p6d-FkAu4sAvkK-JiZpWq___0y3PlAuuscusj4Hi3BWjImiVcQaFQ8A3v6HGvMjCm9pVpoATnAET4H7XJtxcxiCu5_JQWV4LeNT9MspjUuZXtcOi3QvPUoA6AjZKeXq87Dvi18Sm-E389J0mLPS1WQSfl5RN2kKE19tsEq9KwN1csvktJk9HADy-sS02arnRJvt4r2AVtxt9bfK7_QikGebEhIaEshJYcHz_UYfa0p2GnOyOSweI5ZsGGgD5A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/testSaveData?data=My data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2NzEwNTg1NzAsImlhdCI6MTY3MTA1ODI3MCwic2NvcGUiOiJBRE1JTiBVU0VSIn0.IxIH9oaLwr894rSULLXNnFPSYNrsnBzxMbJ87fhh2xE8u9qUVRMssogLOKsqC7xas7mzRzmIdTPTNsr00VNVUdMMjbMoPXmbdLj5wMMN2y-nJjoCeppLn_ay5e_giCeSI6ukoEljGU9xTQwKOqLD7C3uUv_x5ndbFpcgpc-zp4lY1dxVJKW2ucaHTbFzaU2zPtWKTc91VafrPTrL1WM4HgwH-MKEiZs6mkLFMawZ4sA_jwmgNqJlrGxojkyAa6Wa6mQCDxHn2Se1z0lLDaEK68DkciSWVEZ_Mz5nxlNFWD87sbk2rpQyFcTq0jGcs9sFrNOi8V1DRSE_Mr9ECch36w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/testSaveData?data=My data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"testSaveData"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "My data"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/testGetData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2NzEwNTg1NzAsImlhdCI6MTY3MTA1ODI3MCwic2NvcGUiOiJBRE1JTiBVU0VSIn0.IxIH9oaLwr894rSULLXNnFPSYNrsnBzxMbJ87fhh2xE8u9qUVRMssogLOKsqC7xas7mzRzmIdTPTNsr00VNVUdMMjbMoPXmbdLj5wMMN2y-nJjoCeppLn_ay5e_giCeSI6ukoEljGU9xTQwKOqLD7C3uUv_x5ndbFpcgpc-zp4lY1dxVJKW2ucaHTbFzaU2zPtWKTc91VafrPTrL1WM4HgwH-MKEiZs6mkLFMawZ4sA_jwmgNqJlrGxojkyAa6Wa6mQCDxHn2Se1z0lLDaEK68DkciSWVEZ_Mz5nxlNFWD87sbk2rpQyFcTq0jGcs9sFrNOi8V1DRSE_Mr9ECch36w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/testGetData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"testGetData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
