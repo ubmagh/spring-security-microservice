@@ -148,7 +148,8 @@ printf "\n\t  - added 'USER', 'MANAGER' and 'ADMIN' to admin "
 
 
 
+docker exec $CONTAINER kcadm.sh update realms/$REALM -s registrationAllowed=true -s resetPasswordAllowed=true -s rememberMe=true -s loginWithEmailAllowed=true
 
 
 
-
+printf "\n\n👉 Finished setting-up keycloak with initial realm & users "
